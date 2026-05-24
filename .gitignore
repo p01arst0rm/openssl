@@ -15,6 +15,9 @@
 /builddata.pm
 /installdata.pm
 
+# Ignore third-party
+/third-party
+
 # Exporters
 /*.pc
 /OpenSSLConfig*.cmake
