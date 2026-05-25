@@ -1,0 +1,43 @@
+
+crypto_rsa_src = files(
+    'rsa_saos.c',
+    'rsa_err.c',
+    'rsa_asn1.c',
+    'rsa_ameth.c',
+    'rsa_prn.c',
+    'rsa_meth.c',
+    'rsa_mp.c')
+
+crypto_rsa_common_src = files(
+    'rsa_ossl.c',
+    'rsa_gen.c',
+    'rsa_lib.c',
+    'rsa_sign.c',
+    'rsa_pk1.c',
+    'rsa_none.c',
+    'rsa_oaep.c',
+    'rsa_chk.c',
+    'rsa_pss.c',
+    'rsa_x931.c',
+    'rsa_crpt.c',
+    'rsa_sp800_56b_gen.c',
+    'rsa_sp800_56b_check.c',
+    'rsa_backend.c',
+    'rsa_mp_names.c',
+    'rsa_schemes.c')
+
+# IF[{- !$disabled{'deprecated-0.9.8'} -}]
+#   SOURCE[../../libcrypto]=rsa_depr.c
+# ENDIF
+# IF[{- !$disabled{'deprecated-3.0'} -}]
+#   SOURCE[../../libcrypto]=rsa_x931g.c
+# ENDIF
+
+# SOURCE[../../providers/libfips.a]=$COMMON
+
+# IF[{- !$disabled{'acvp-tests'} -}]
+#   SOURCE[../../providers/libfips.a]=rsa_acvp_test_params.c
+# ENDIF
+
+crypto_rsa_src += crypto_rsa_common_src
+crypto_src += crypto_rsa_src

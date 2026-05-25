@@ -1,0 +1,11 @@
+
+crypto_src += files(
+    'md4_dgst.c',
+    'md4_one.c')
+
+# TODO
+# When all deprecated symbols are removed, libcrypto doesn't export the
+# MD4 functions, so we must include them directly in liblegacy.a
+# IF[{- $disabled{'deprecated-3.0'} && !$disabled{module} && !$disabled{shared} -}]
+#   SOURCE[../../providers/liblegacy.a]=md4_dgst.c md4_one.c
+# ENDIF

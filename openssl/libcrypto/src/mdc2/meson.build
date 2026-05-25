@@ -1,0 +1,11 @@
+
+crypto_src += files(
+    'mdc2dgst.c',
+    'mdc2_one.c')
+
+# TODO
+# When all deprecated symbols are removed, libcrypto doesn't export the
+# MDC2 functions, so we must include them directly in liblegacy.a
+# IF[{- $disabled{'deprecated-3.0'} && !$disabled{module} && !$disabled{shared} -}]
+#   SOURCE[../../providers/liblegacy.a]=mdc2dgst.c mdc2_one.c
+# ENDIF

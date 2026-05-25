@@ -1,0 +1,1029 @@
+#-- OpenSSL Config -----------------------------------------------------
+
+  option(
+    'makedepend',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build OpenSSL makedepend',
+    yield : true)
+
+  option(
+    'shared',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build shared',
+    yield : true)
+
+  option(
+    'extras',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build OpenSSL extras',
+    yield : true)
+
+  option(
+    'apps',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build OpenSSL apps',
+    yield : true)
+
+  option(
+    'docs',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build OpenSSL Documentation',
+    yield : true)
+
+  option(
+    'demos',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build OpenSSL demos',
+    yield : true)
+
+  option(
+    'tests',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Run OpenSSL tests',
+    yield : true)
+
+
+  option(
+    'test-unit',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Run OpenSSL unit tests',
+    yield : true)
+
+  option(
+    'test-acvp',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Run OpenSSL acvp tests',
+    yield : true)
+
+  option(
+    'test-allocfail',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Run OpenSSL allocfail tests',
+    yield : true)
+
+  option(
+    'test-build-cpp',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Run OpenSSL buildtest-c++ tests',
+    yield : true)
+
+  option(
+    'test-external',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Run OpenSSL external tests',
+    yield : true)
+
+  option(
+    'fuzz-afl',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with fuzz-afl suport',
+    yield : true)
+
+  option(
+    'fuzz-libfuzzer',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with fuzz-libfuzzer suport',
+    yield : true)
+
+  option(
+    'deprecated',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with deprecated suport',
+    yield : true)
+
+  option(
+    'deprecated-3_0',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Enable deprecated/3.0 for legacy builds',
+    yield : true)
+
+
+
+#-- Optional Protocols -----------------------------------------------
+
+  option(
+    'cmp',
+    type : 'feature',
+    value : 'enabled',
+    description : 'Build OpenSSL with cmp support',
+    yield : true)
+
+  option(
+    'dtls',
+    type : 'feature',
+    value : 'enabled',
+    description : 'Build OpenSSL with dtls support',
+    yield : true)
+
+  option(
+    'http',
+    type : 'feature',
+    value : 'enabled',
+    description : 'Build OpenSSL with http support',
+    yield : true)
+
+  option(
+    'ocsp',
+    type : 'feature',
+    value : 'enabled',
+    description : 'Build OpenSSL with ocsp support',
+    yield : true)
+
+  option(
+    'ktls',
+    type : 'feature',
+    value : 'enabled',
+    description : 'Build OpenSSL with ktls support',
+    yield : true)
+
+  option(
+    'tls',
+    type : 'feature',
+    value : 'enabled',
+    description : 'Build OpenSSL with tls support',
+    yield : true)
+
+  option(
+    'tls-deprecated-ec',
+    type : 'feature',
+    value : 'enabled',
+    description : 'Build OpenSSL with tls-deprecated-ec support',
+    yield : true)
+
+  option(
+    'quic',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build OpenSSL with quic support',
+    yield : true)
+
+  option(
+    'sctp',
+    type : 'feature',
+    value : 'enabled',
+    description : 'Build OpenSSL with sctp support',
+    yield : true)
+
+  option(
+    'srp',
+    type : 'feature',
+    value : 'enabled',
+    description : 'Build OpenSSL with srp support',
+    yield : true)
+
+  option(
+    'srtp',
+    type : 'feature',
+    value : 'enabled',
+    description : 'Build OpenSSL with srtp support',
+    yield : true)
+
+
+
+#-- Optional Features ------------------------------------------------
+
+  option(
+    'uplink',
+    type : 'feature',
+    value : 'enabled',
+    description : 'Build OpenSSL with uplink support',
+    yield : true)
+
+  option(
+    'ech',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with ech suport',
+    yield : true)
+
+  option(
+    'unstable-qlog',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with qlog suport (unstable)',
+    yield : true)
+
+  option(
+    'asm',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with asm suport',
+    yield : true)
+
+  option(
+    'asan',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with asan suport',
+    yield : true)
+
+  option(
+    'async',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with async suport',
+    yield : true)
+
+  option(
+    'autoalginit',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with autoalginit suport',
+    yield : true)
+
+  option(
+    'autoload-config',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with autoload-config suport',
+    yield : true)
+
+  option(
+    'brotli-dynamic',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with brotli-dynamic suport',
+    yield : true)
+
+ option(
+    'bulk',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with bulk suport',
+    yield : true)
+
+  option(
+    'cached-fetch',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with cached-fetch suport',
+    yield : true)
+
+  option(
+    'dgram',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with dgram suport',
+    yield : true)
+
+  option(
+    'winstore',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with winstore suport',
+    yield : true)
+
+  option(
+    'crypto-mdebug',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with crypto-mdebug suport',
+    yield : true)
+
+  option(
+    'ct',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with ct suport',
+    yield : true)
+
+  option(
+    'ct-validation',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with ct-validation suport',
+    yield : true)
+
+  option(
+    'default-thread-pool',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with the default thread pool',
+    yield : true)
+
+  option(
+    'h3demo',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with h3demo suport',
+    yield : true)
+
+  option(
+    'hqinterop',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with hqinterop suport',
+    yield : true)
+
+  option(
+    'dso',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with dso suport',
+    yield : true)
+
+  option(
+    'ec_explicit_curves',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with ec_explicit_curves suport',
+    yield : true)
+
+  option(
+    'ec_nistp_64_gcc_128',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with ec_nistp_64_gcc_128 suport',
+    yield : true)
+
+  option(
+    'egd',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with egd suport',
+    yield : true)
+
+  option(
+    'err',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with err suport',
+    yield : true)
+
+  option(
+    'filenames',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with filenames suport',
+    yield : true)
+
+  option(
+    'fips',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with fips suport',
+    yield : true)
+
+  option(
+    'fips-securitychecks',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with fips-securitychecks suport',
+    yield : true)
+
+  option(
+    'fips-post',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with fips-post suport',
+    yield : true)
+
+  option(
+    'fips-jitter',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with fips-jitter suport',
+    yield : true)
+
+  option(
+    'integrity-only-ciphers',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with integrity-only-ciphers suport',
+    yield : true)
+
+  option(
+    'jitter',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with jitter suport',
+    yield : true)
+
+  option(
+    'legacy',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with legacy suport',
+    yield : true)
+
+  option(
+    'module',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with module suport',
+    yield : true)
+   
+
+  option(
+    'msan',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with msan suport',
+    yield : true)
+
+  option(
+    'multiblock',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with multiblock suport',
+    yield : true)
+
+  option(
+    'nextprotoneg',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with nextprotoneg suport',
+    yield : true)
+
+  option(
+    'pic',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with pic suport',
+    yield : true)
+
+  option(
+    'pie',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with pie suport',
+    yield : true)
+
+  option(
+    'pinshared',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with pinshared suport',
+    yield : true)
+
+  option(
+    'posix-io',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with posix-io suport',
+    yield : true)
+
+  option(
+    'rdrand',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with rdrand suport',
+    yield : true)
+
+  option(
+    'rfc3779',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with rfc3779 suport',
+    yield : true)
+
+  option(
+    'secure-memory',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with secure-memory suport',
+    yield : true)
+
+  option(
+    'sm2-precomp',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with sm2-precomp suport',
+    yield : true)
+
+  option(
+    'sock',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with sock suport',
+    yield : true)
+
+  option(
+    'sse2',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with sse2 suport',
+    yield : true)
+
+  option(
+    'ssl-trace',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with ssl-trace suport',
+    yield : true)
+
+  option(
+    'static-vcruntime',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with static-vcruntime suport',
+    yield : true)
+
+  option(
+    'stdio',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with stdio suport',
+    yield : true)
+
+  option(
+    'sslkeylog',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with sslkeylog suport',
+    yield : true)
+
+  option(
+    'sslkeylog',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with sslkeylog suport',
+    yield : true)
+
+  option(
+    'tfo',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with tfo suport',
+    yield : true)
+
+  option(
+    'thread-pool',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with thread-pool suport',
+    yield : true)
+
+  option(
+    'threads',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with threads suport',
+    yield : true)
+
+  option(
+    'trace',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with trace suport',
+    yield : true)
+
+  option(
+    'ts',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with ts suport',
+    yield : true)
+
+  option(
+    'ubsan',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with ubsan suport',
+    yield : true)
+
+  option(
+    'ui-console',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with ui-console suport',
+    yield : true)
+
+  option(
+    'uplink',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with uplink suport',
+    yield : true)
+
+  option(
+    'weak-ssl-ciphers',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with weak-ssl-ciphers suport',
+    yield : true)
+
+  option(
+    'zlib-dynamic',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with zlib-dynamic suport',
+    yield : true)
+
+  option(
+    'zstd-dynamic',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with zstd-dynamic suport',
+    yield : true)
+
+
+#-- Optional Algorithms ----------------------------------------------
+
+  option(
+    'argon2',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with argon2 suport',
+    yield : true)  
+  
+  option(
+    'aria',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with aria suport',
+    yield : true)  
+  
+  option(
+    'bf',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with bf suport',
+    yield : true)
+  
+  option(
+    'blake2',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with blake2 suport',
+    yield : true)
+
+  option(
+    'brotli',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with brotli suport',
+    yield : true)
+
+  option(
+    'camellia',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with camellia suport',
+    yield : true)
+
+  option(
+    'cast',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with cast suport',
+    yield : true)
+
+  option(
+    'chacha',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with chacha suport',
+    yield : true)
+  
+  option(
+    'cmac',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with cmac suport',
+    yield : true)
+
+  option(
+    'cms',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with cms suport',
+    yield : true)
+
+  option(
+    'comp',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with comp suport',
+    yield : true)
+
+  option(
+    'des',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with des suport',
+    yield : true)
+
+  option(
+    'dh',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with dh suport',
+    yield : true)
+
+  option(
+    'dsa',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with dsa suport',
+    yield : true)
+
+  option(
+    'hmac-drbg-kdf',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with hmac-drbg-kdf suport',
+    yield : true)
+
+  option(
+    'hmac-drbg-kdf',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with hmac-drbg-kdf suport',
+    yield : true)
+
+  option(
+    'ec',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with ec suport',
+    yield : true)
+
+  option(
+    'ec2m',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with ec2m suport',
+    yield : true)
+
+  option(
+    'ecx',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with ecx suport',
+    yield : true)
+
+  option(
+    'kbkdf',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with kbkdf suport',
+    yield : true)
+
+  option(
+    'krb5kdf',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with krb5kdf suport',
+    yield : true)
+
+  option(
+    'gost',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with gost suport',
+    yield : true)
+
+  option(
+    'idea',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with idea suport',
+    yield : true)
+
+  option(
+    'ikev2kdf',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with ikev2kdf suport',
+    yield : true)
+
+  option(
+    'md2',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with md2 suport',
+    yield : true)
+
+  option(
+    'md4',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with md4 suport',
+    yield : true)
+
+  option(
+    'md5',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with md5 suport',
+    yield : true)
+
+  option(
+    'mdc2',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with mdc2 suport',
+    yield : true)
+
+  option(
+    'ml-dsa',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with ml-dsa suport',
+    yield : true)
+
+  option(
+    'ml-kem',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with ml-kem suport',
+    yield : true)
+
+  option(
+    'lms',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with lms suport',
+    yield : true)
+
+  option(
+    'ocb',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with ocb suport',
+    yield : true)
+
+  option(
+    'poly1305',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with poly1305 suport',
+    yield : true)
+
+  option(
+    'psk',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with psk suport',
+    yield : true)
+
+  option(
+    'pvkkdf',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with pvkkdf suport',
+    yield : true)
+
+  option(
+    'rc2',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with rc2 suport',
+    yield : true) 
+
+  option(
+    'rc4',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with rc4 suport',
+    yield : true) 
+
+  option(
+    'rc5',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with rc5 suport',
+    yield : true) 
+  
+  option(
+    'rmd160',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with rmd160 suport',
+    yield : true) 
+
+  option(
+    'scrypt',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with scrypt suport',
+    yield : true)
+
+  option(
+    'seed',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with seed suport',
+    yield : true)
+ 
+  option(
+    'slh-dsa',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with slh-dsa suport',
+    yield : true)
+ 
+  option(
+    'siv',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with siv suport',
+    yield : true)
+
+  option(
+    'snmpkdf',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with snmpkdf suport',
+    yield : true)
+
+  option(
+    'sm2',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with sm2 suport',
+    yield : true)
+
+  option(
+    'sm3',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with sm3 suport',
+    yield : true)
+
+  option(
+    'sm4',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with sm4 suport',
+    yield : true)
+
+  option(
+    'srtpkdf',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with srtpkdf suport',
+    yield : true)
+
+  option(
+    'sshkdf',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with sshkdf suport',
+    yield : true)
+
+  option(
+    'sskdf',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with sskdf suport',
+    yield : true)
+
+  option(
+    'x942kdf',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with x942kdf suport',
+    yield : true)
+
+  option(
+    'x963kdf',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with x963kdf suport',
+    yield : true)
+
+  option(
+    'whirlpool',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with whirlpool suport',
+    yield : true)
+
+  option(
+    'zlib',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with zlib suport',
+    yield : true)
+
+  option(
+    'zstd',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with zstd suport',
+    yield : true)
+
+  option(
+    'siphash',
+    type : 'feature',
+    value : 'disabled',
+    description : 'Build with siphash suport',
+    yield : true)

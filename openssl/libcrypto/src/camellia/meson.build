@@ -1,0 +1,34 @@
+crypto_camellia_src = files(
+    'camellia.c',
+    'cmll_misc.c',
+    'cmll_cbc.c')
+
+# was CMLLASM
+crypto_camellia_asm_src = []
+
+# TODO
+# IF[{- !$disabled{asm} -}]
+#   $CMLLASM_x86=cmll-x86.S
+#   $CMLLASM_x86_64=cmll-x86_64.s cmll_misc.c
+#   $CMLLASM_sparcv9=camellia.c cmll_misc.c cmll_cbc.c cmllt4-sparcv9.S
+
+   # Now that we have defined all the arch specific variables, use the
+   # appropriate one
+#   IF[$CMLLASM_{- $target{asm_arch} -}]
+#     $CMLLASM=$CMLLASM_{- $target{asm_arch} -}
+#     $CMLLDEF=CMLL_ASM
+#   ENDIF
+# ENDIF
+
+# GENERATE[cmll-x86.S]=asm/cmll-x86.pl
+# DEPEND[cmll-x86.S]=../perlasm/x86asm.pl
+# GENERATE[cmll-x86_64.s]=asm/cmll-x86_64.pl
+# GENERATE[cmllt4-sparcv9.S]=asm/cmllt4-sparcv9.pl
+# INCLUDE[cmllt4-sparcv9.o]=..
+# DEPEND[cmllt4-sparcv9.S]=../perlasm/sparcv9_modes.pl
+
+# DEFINE[../../libcrypto]=$CMLLDEF
+
+
+crypto_camellia_src += crypto_camellia_asm_src
+crypto_src += crypto_camellia_src
